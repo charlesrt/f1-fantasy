@@ -1,0 +1,13 @@
+{
+  "name": "aston-martpx-f1-fantasy",
+  "private": true,
+  "description": "Static dashboard for the aston martpx F1 Fantasy league. No build needed to publish; these tools are for checks only.",
+  "type": "module",
+  "scripts": {
+    "check": "node tools/a11y-check.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.2",
+    "playwright": "1.48.2"
+  }
+}

@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aston martpx · F1 Fantasy Telemetry</title>
+<meta name="description" content="Live telemetry for aston martpx, an F1 Fantasy league, 2026: race scores, cumulative standings, overtakes and season films.">
+<meta name="theme-color" content="#0A0C0F">
+<!-- link previews: full addresses, as some sites (X, LinkedIn) need them. The image keeps its content in the centre square for sites that crop. -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://charlesrt.github.io/f1-fantasy/">
+<meta property="og:site_name" content="aston martpx">
+<link rel="canonical" href="https://charlesrt.github.io/f1-fantasy/">
+<meta property="og:title" content="aston martpx · F1 Fantasy">
+<meta property="og:description" content="Race recaps and live league telemetry: every round’s podium, the championship and who moved.">
+<meta property="og:image" content="https://charlesrt.github.io/f1-fantasy/assets/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="aston martpx, F1 Fantasy 2026: race recaps, standings and league telemetry">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:image" content="https://charlesrt.github.io/f1-fantasy/assets/og.png">
+<meta name="twitter:image:alt" content="aston martpx, F1 Fantasy 2026: race recaps, standings and league telemetry">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#tiles">Skip to the standings</a>
+<main>
+<div class="tl" id="top">
+  <div class="tl-stripe" aria-hidden="true"></div>
+  <div class="tl-wrap">
+    <div class="tl-top">
+      <div class="tl-left tl-intro">
+        <header id="header">
+          <p class="tl-eyebrow"><span class="tl-live">Pit wall</span><span>2026 season</span><span id="eyebrow-session">—</span></p>
+          <h1>F1 Fantasy <span>/</span> aston martpx</h1>
+          <p class="tl-take dash-skeleton" id="takeaway" data-source="standings">—</p>
+        </header>
+        <button type="button" class="tl-btn tl-watch-toggle" id="watch-toggle" aria-expanded="false" aria-controls="watch">
+          <span class="tl-watch-toggle-ico" aria-hidden="true">▶</span>Watch and share<span class="tl-chev" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <section class="tl-watch" id="watch" aria-labelledby="watch-h" hidden>
+        <h2 id="watch-h" class="sr">Watch and share</h2>
+        <div class="tl-watch-group" role="group" aria-labelledby="watch-k1">
+          <p class="tl-watch-k" id="watch-k1">Whole season</p>
+          <div class="tl-watch-row">
+            <button type="button" class="tl-film" data-film="grid">
+              <span class="tl-film-ico" aria-hidden="true">▶</span>
+              <span class="tl-film-txt"><b>Grid race</b><span>Every round as one race, lights out to the chequered flag</span><span class="tl-film-m">Animation · 2 min</span></span>
+            </button>
+            <button type="button" class="tl-film" data-film="tour">
+              <span class="tl-film-ico" aria-hidden="true">▶</span>
+              <span class="tl-film-txt"><b>World tour</b><span>Circuit to circuit on a 3D globe, with each round’s podium</span><span class="tl-film-m">Animation · 3 min</span></span>
+            </button>
+          </div>
+        </div>
+        <div class="tl-watch-group" role="group" aria-labelledby="watch-k2">
+          <p class="tl-watch-k" id="watch-k2">Latest round · <span id="watch-round">—</span></p>
+          <div class="tl-watch-row">
+            <button type="button" class="tl-film" data-recap="latest">
+              <span class="tl-film-ico" aria-hidden="true">▶</span>
+              <span class="tl-film-txt"><b>Race recap</b><span>The league podium rises, then the standings reshuffle</span><span class="tl-film-m">Animation · 12 sec</span></span>
+            </button>
+            <a class="tl-film" href="#snapshot" data-view="snapshot" data-round="latest">
+              <span class="tl-film-ico tl-film-ico-pod" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><rect x="1" y="7" width="4.4" height="7" rx=".8" fill="currentColor"/><rect x="5.8" y="3" width="4.4" height="11" rx=".8" fill="currentColor"/><rect x="10.6" y="9" width="4.4" height="5" rx=".8" fill="currentColor"/></svg></span>
+              <span class="tl-film-txt"><b>Race snapshot</b><span>Podium, standings and movers for any round, on one card</span><span class="tl-film-m">Image · any round</span></span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="tl-sentinel" id="bar-sentinel" aria-hidden="true"></div>
+    <p class="sr" id="season-live" aria-live="polite"></p>
+    <section class="tl-sbar" id="round-controls" aria-label="Season controls">
+      <div class="tl-bar-top">
+        <div class="tl-bar-title"><h2 id="rounds-label"><span class="tl-bar-lbl">Standings after</span><b class="tl-bar-now" id="bar-now">—</b></h2>
+        <p class="tl-note tl-bar-note">Pick any scored round to see the season as it stood. Saudi Arabia was cancelled and the Bahrain GP moved to Sepang, Malaysia, so the season runs to 23 rounds.<span id="cal-note"></span></p></div>
+        <div class="tl-bar-actions">
+          <div class="tl-focus"><label class="tl-ctl-label" for="focus">Focus team</label><select id="focus" class="tl-select" data-source="teams"></select></div>
+          <button type="button" class="tl-btn" id="play"><span aria-hidden="true" id="play-ico">▶</span><span id="play-txt">Replay season</span></button>
+        </div>
+      </div>
+      <div class="tl-cal" id="rounds" role="radiogroup" aria-labelledby="rounds-label" data-source="calendar"></div>
+      <div class="tl-legend tl-bar-legend"><span><i class="k-green"></i>In league data · pick one</span><span><i class="k-purple"></i>◆ Race best</span><span><i class="k-await"></i>Raced, awaiting scores</span><span><i class="k-up"></i>Upcoming</span><span class="tl-spr-key"><svg class="spr-ico" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M7 0 2 7h3.2L4.4 12 10 4.8H6.6Z" fill="currentColor"/></svg>Sprint weekend</span><span>Click any line, bar or row, or use Focus team, to focus a team</span></div>
+    </section>
+
+
+    <section class="tl-tiles" id="tiles" aria-label="Headline figures">
+      <div class="tl-tile" id="tile-leader"><span class="tl-tile-k">Championship leader</span><span class="tl-tile-v dash-skeleton" id="t-leader-v" data-source="standings" data-field="cum">—</span><span class="tl-tile-s" id="t-leader-s">—</span></div>
+      <div class="tl-tile" id="tile-gap" style="--tile-accent: var(--tl-yellow)"><span class="tl-tile-k">Gap P1 → P2</span><span class="tl-tile-v dash-skeleton" id="t-gap-v" data-source="standings" data-field="gap">—</span><span class="tl-tile-s" id="t-gap-s">—</span></div>
+      <div class="tl-tile" id="tile-top" style="--tile-accent: var(--tl-purple)"><span class="tl-tile-k">Race best <span id="t-top-r"></span></span><span class="tl-tile-v dash-skeleton" id="t-top-v" data-source="race_stats" data-field="top">—</span><span class="tl-tile-s" id="t-top-s">—</span></div>
+      <div class="tl-tile" id="tile-avg" style="--tile-accent: var(--tl-green)"><span class="tl-tile-k">Field average <span id="t-avg-r"></span></span><span class="tl-tile-v dash-skeleton" id="t-avg-v" data-source="race_stats" data-field="mean">—</span><span class="tl-tile-s" id="t-avg-s">—</span></div>
+      <div class="tl-tile" id="tile-climb" style="--tile-accent: #5B8CFF"><span class="tl-tile-k">Biggest climber</span><span class="tl-tile-v dash-skeleton" id="t-climb-v" data-source="standings" data-field="change">—</span><span class="tl-tile-s" id="t-climb-s">—</span></div>
+    </section>
+
+    <div class="tl-section-h"><h2 id="h-race">The championship</h2></div>
+    <div class="tl-grid">
+      <article class="tl-card wide" id="card-cumulative">
+        <div class="tl-card-h">
+          <div><h2>Cumulative points</h2><p class="tl-note">Running total after each round. Lines fade after the round selected. Late entrants start the round they joined.</p></div>
+        </div>
+        <div class="tl-chart dash-skeleton" id="chart-cum" data-source="standings teams"></div>
+      </article>
+
+      <article class="tl-card" id="card-tower">
+        <div class="tl-card-h"><div><h2>Timing tower</h2><p class="tl-note" id="tower-note">Positions after the selected round.</p></div></div>
+        <div class="tl-scroll">
+          <table id="tower" data-source="standings" data-row-key="team,round">
+            <caption class="sr">Standings after the selected round</caption>
+            <thead><tr>
+              <th data-field="rank" data-k="rank"><button type="button">Pos</button></th>
+              <th class="l" data-field="team" data-k="team"><button type="button">Team</button></th>
+              <th data-field="cum" data-k="cum"><button type="button">Pts</button></th>
+              <th data-field="gap" data-k="gap"><button type="button">Gap</button></th>
+              <th data-field="race_pts" data-k="race_pts"><button type="button">Race</button></th>
+              <th data-field="change" data-k="change"><button type="button">+/−</button></th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="tl-card" id="card-race">
+        <div class="tl-card-h"><div><h2 id="race-title">Race podium</h2><p class="tl-note" id="race-sub">Top three league scores in the selected round.</p></div><div class="tl-card-acts"><button type="button" class="tl-btn tl-btn-sm" data-recap="selected" id="race-recap-btn"><span aria-hidden="true">▶</span> <span id="race-recap-txt">Play recap</span></button><a class="tl-btn tl-btn-sm" href="#snapshot" data-view="snapshot" data-round="selected" id="race-snap-btn"><span class="tl-pod-ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="13" height="13" focusable="false"><rect x="1" y="7" width="4.4" height="7" rx=".8" fill="currentColor"/><rect x="5.8" y="3" width="4.4" height="11" rx=".8" fill="currentColor"/><rect x="10.6" y="9" width="4.4" height="5" rx=".8" fill="currentColor"/></svg></span> <span id="race-snap-txt">Snapshot</span></a></div></div>
+        <div class="tl-podium" id="podium" data-source="scores"></div>
+        <div class="tl-race-meta">
+          <div class="tl-mini"><div class="k">Median</div><div class="v" id="rm-median" data-source="race_stats" data-field="median">—</div><div class="s">typical team</div></div>
+          <div class="tl-mini"><div class="k">Winning margin</div><div class="v" id="rm-margin" data-source="race_stats" data-field="margin">—</div><div class="s" id="rm-margin-s">—</div></div>
+          <div class="tl-mini"><div class="k">Spread</div><div class="v" id="rm-spread" data-source="race_stats" data-field="spread">—</div><div class="s">best minus lowest</div></div>
+          <div class="tl-mini"><div class="k">Beat the median</div><div class="v" id="rm-beat" data-source="race_stats" data-field="beat_median">—</div><div class="s" id="rm-beat-s">—</div></div>
+          <div class="tl-mini"><div class="k">Lowest</div><div class="v" id="rm-low" data-source="race_stats" data-field="low">—</div><div class="s" id="rm-low-s">—</div></div>
+        </div>
+      </article>
+
+      <article class="tl-card wide" id="card-sectors">
+        <div class="tl-card-h">
+          <div><h2>Race-by-race sectors</h2><p class="tl-note">Every team’s score in every round, against the median of all teams in that round, coloured like a timing screen.</p></div>
+        </div>
+        <div class="tl-legend" aria-label="Legend">
+          <span><i class="k-purple"></i>◆ Race best</span>
+          <span><i class="k-green"></i><b class="mk mk-up" aria-hidden="true">▲</b><span>At or above race median</span></span>
+          <span><i class="k-yellow"></i><b class="mk mk-down" aria-hidden="true">▼</b><span>Below race median</span></span>
+          <span><i class="k-none"></i>Not entered</span>
+        </div>
+        <div class="tl-scroll" tabindex="0" role="region" aria-label="Race-by-race sectors table, scrolls sideways">
+          <table class="tl-sector" id="sectors" data-source="grid" data-row-key="team">
+            <caption class="sr">Points per team per round, compared with each round’s median. Race bests are marked.</caption>
+            <thead><tr id="sectors-head"></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="tl-card" id="card-bump">
+        <div class="tl-card-h"><div><h2>Position changes</h2><p class="tl-note">League position after each round — overtakes are where lines cross.</p></div></div>
+        <div class="tl-chart short dash-skeleton" id="chart-bump" data-source="standings teams"></div>
+      </article>
+
+      <article class="tl-card" id="card-rate">
+        <div class="tl-card-h"><div><h2>Points per race entered</h2><p class="tl-note">The fairest view for late entrants: total ÷ races played.</p></div></div>
+        <div class="tl-chart short dash-skeleton" id="chart-rate" data-source="standings teams"></div>
+      </article>
+
+      <article class="tl-card wide" id="card-team">
+        <div class="tl-card-h"><div><h2 id="team-title">Team telemetry</h2><p class="tl-note" id="team-sub">Race scores for the focus team against the field median.</p></div></div>
+        <div class="tl-race-meta" id="team-kpis">
+          <div class="tl-mini"><div class="k">Position</div><div class="v" id="tm-rank" data-source="standings" data-field="rank">—</div><div class="s" id="tm-rank-s">—</div></div>
+          <div class="tl-mini"><div class="k">Per race</div><div class="v" id="tm-avg" data-source="standings" data-field="avg">—</div><div class="s" id="tm-races">—</div></div>
+          <div class="tl-mini"><div class="k">Best round</div><div class="v" id="tm-best" data-source="team_form" data-field="best">—</div><div class="s" id="tm-best-s">—</div></div>
+          <div class="tl-mini"><div class="k">Worst round</div><div class="v" id="tm-worst" data-source="team_form" data-field="worst">—</div><div class="s" id="tm-worst-s">—</div></div>
+          <div class="tl-mini"><div class="k">Last 3 avg</div><div class="v" id="tm-form" data-source="team_form" data-field="last3">—</div><div class="s">form guide</div></div>
+          <div class="tl-mini"><div class="k">Consistency</div><div class="v" id="tm-sd" data-source="team_form" data-field="sd">—</div><div class="s">± points (std dev)</div></div>
+        </div>
+        <div class="tl-chart short dash-skeleton" id="chart-team" data-source="scores race_stats teams"></div>
+      </article>
+
+
+      <article class="tl-card wide" id="card-ideas">
+        <div class="tl-card-h"><div><h2>Ways to drill in</h2><p class="tl-note">Questions this season’s data can already answer.</p></div></div>
+        <ul class="tl-ideas">
+          <li><b>Rewind the season</b>Pick any round above to see the table, podium and gaps as they stood that weekend.</li>
+          <li><b>Fair fight</b>Points per race entered levels the grid for teams who joined at Suzuka or Monaco.</li>
+          <li><b>Form guide</b>Last-three-race average shows who is peaking now, not who banked points early.</li>
+          <li><b>Consistency</b>A low spread means a steady scorer; a high one means boom-or-bust picks.</li>
+          <li><b>Purple sectors</b>Count who wins the most individual rounds — the weekend specialists.</li>
+          <li><b>Head-to-head</b>Focus one team and compare its line to a rival’s on the cumulative chart.</li>
+        </ul>
+      </article>
+
+      <article class="tl-card wide tl-future" id="card-picks" aria-labelledby="picks-title">
+        <div class="tl-card-h"><div><h2 id="picks-title">Track from 2027 · Chips and picks</h2><p class="tl-note" id="picks-sub">Optional fields to add next season. Record any of them and this section fills in by itself.</p></div></div>
+        <div class="tl-empty" id="picks-empty" hidden>
+          <ul class="tl-ideas tl-future-list">
+            <li><b>Chips played</b>Record the <em>chip</em> each team plays every round, to show whether each chip paid off against that team’s usual score.</li>
+            <li><b>Drivers and constructors</b>Record each team’s <em>line-up</em> every round, to reveal the most popular, and most rewarding, picks.</li>
+            <li><b>Cost cap left</b>Optionally record the <em>budget left</em> after each round, to see who is building value for later in the season.</li>
+          </ul>
+          <p><b>How to record it.</b> Add any of these optional fields to a team’s entry in the league scores (<code>data/scores.js</code> on the website):</p>
+          <pre><code>{ "team": "Champion_1", "round": 1, "points": 241,
+  "chip": "Wildcard",
+  "drivers": ["NOR", "PIA", "LEC", "HAD", "BEA"],
+  "constructors": ["MCL", "FER"],
+  "cost_cap_left": 1.4 }</code></pre>
+        </div>
+        <div class="tl-picks" id="picks-body" hidden>
+          <section class="tl-sub" aria-labelledby="pk-lineup-h"><h3 id="pk-lineup-h">Line-up · <span id="pk-team"></span></h3><div id="pk-lineup"></div></section>
+          <section class="tl-sub" aria-labelledby="pk-drivers-h"><h3 id="pk-drivers-h">Most picked drivers</h3><div id="pk-drivers" class="tl-bars"></div></section>
+          <section class="tl-sub" aria-labelledby="pk-cons-h"><h3 id="pk-cons-h">Most picked constructors</h3><div id="pk-cons" class="tl-bars"></div></section>
+          <section class="tl-sub tl-sub-wide" aria-labelledby="pk-chips-h"><h3 id="pk-chips-h">Chips played</h3>
+            <div class="tl-scroll" style="max-height:320px"><table id="pk-chips">
+              <caption class="sr">Chips played up to the selected round, with each team's score against its own average</caption>
+              <thead><tr><th class="l" scope="col"><span class="plain">Round</span></th><th class="l" scope="col"><span class="plain">Team</span></th><th class="l" scope="col"><span class="plain">Chip</span></th><th scope="col"><span class="plain">Pts</span></th><th scope="col"><span class="plain">vs own avg</span></th></tr></thead>
+              <tbody></tbody></table></div>
+          </section>
+        </div>
+      </article>
+    </div>
+
+    <section class="tl-view tl-snap" id="snapshot" aria-labelledby="snap-title" hidden>
+      <p><a class="tl-back" href="#top" data-view="dashboard"><span aria-hidden="true">←</span> Back to the dashboard</a></p>
+      <div class="tl-snap-head">
+        <div><h2 id="snap-title" tabindex="-1">Race snapshot</h2><p class="tl-note">One round on a single card: the league podium, the weekend in numbers, highlights and the full standings. Save it as an image or copy it into Slack.</p></div>
+        <div class="tl-snap-nav">
+          <button type="button" class="tl-btn" id="snap-prev" aria-label="Previous round"><span aria-hidden="true">◀</span></button>
+          <label class="sr" for="snap-round">Round</label><select id="snap-round" class="tl-select"></select>
+          <button type="button" class="tl-btn" id="snap-next" aria-label="Next round"><span aria-hidden="true">▶</span></button>
+        </div>
+      </div>
+      <div class="tl-snap-body">
+        <div class="tl-snap-card" id="snap-card"></div>
+        <div class="tl-snap-side">
+          <div class="tl-snap-actions">
+            <button type="button" class="tl-btn" id="snap-copy">Copy image</button>
+            <button type="button" class="tl-btn" id="snap-download">Download PNG</button>
+            <button type="button" class="tl-btn" id="snap-copy-text">Copy as text</button>
+          </div>
+          <p class="tl-note" id="snap-status" role="status"></p>
+          <h3 id="snap-text-h">Text version</h3>
+          <ul class="tl-snap-text" id="snap-text"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="tl-view tl-a11y" id="accessibility" aria-labelledby="a11y-title" hidden>
+      <p><a class="tl-back" href="#top" data-view="dashboard"><span aria-hidden="true">←</span> Back to the dashboard</a></p>
+      <h2 id="a11y-title" tabindex="-1">Accessibility statement</h2>
+      <p class="tl-a11y-lede">This statement covers the aston martpx F1 Fantasy dashboard, its race snapshot, its race recap and its two animated films. We want everyone in the league to be able to follow the season, whatever the device, setting or assistive technology they use.</p>
+
+      <h3>How accessible this site is</h3>
+      <p>We aim for the Web Content Accessibility Guidelines (WCAG) version 2.2 at level AA, and we test against it. As far as we know, the site now meets that standard. The <a href="#a11y-limits">known limitations</a> below each have an accessible alternative.</p>
+
+      <h3>What you can do</h3>
+      <ul>
+        <li><b>Use a keyboard alone.</b> Every control can be reached with Tab and shows a clear yellow focus ring. Choose a round with the arrow keys, sort the timing tower, open and close the recap and films, and play, pause or skip through them (Space, and ← → to move 5 seconds).</li>
+        <li><b>Use a screen reader.</b> Pages use headings, landmarks and labelled tables. Charts have text descriptions that point to the tables holding the same figures. The recap and films each come with a written summary, and Replay season announces each round as it plays.</li>
+        <li><b>Zoom to 400% or use a narrow screen.</b> The layout reflows down to 320 pixels wide without scrolling sideways. Only the wide data tables scroll within their own box.</li>
+        <li><b>Turn motion down.</b> If your device asks for reduced motion, charts and numbers change without animating. The recap and films open paused on their final frame, and you can still choose to play them.</li>
+        <li><b>Control sound.</b> The only sound is a five-beep start-lights countdown in the grid race, under 3 seconds long. It plays only after you press play, and the Sound button turns it off.</li>
+        <li><b>Read without relying on colour.</b> Text meets contrast of at least 4.5:1, controls at least 3:1. Meaning is never carried by colour alone: race bests carry ◆, scores above or below the median carry ▲ or ▼, and position changes carry arrows.</li>
+      </ul>
+
+      <h3 id="a11y-limits">Known limitations</h3>
+      <ul>
+        <li>The race snapshot is drawn as one picture so it can be shared as an image. Everything on it is also listed as text beside it.</li>
+        <li>The recap and film animations are drawn as pictures. Their on-screen text doesn’t respond to your own text-spacing settings. Their written summaries, and the tables on this page, give the same information as text.</li>
+        <li>Chart tooltips appear on mouse hover only (press Escape to close one). Every value in them is also in the timing tower or the race-by-race table.</li>
+        <li>Clicking a chart line or table row to focus a team needs a mouse. The Focus team menu in the season bar does the same from the keyboard.</li>
+        <li>The version of this dashboard inside Claude also depends on Claude’s own interface, which this statement doesn’t cover.</li>
+      </ul>
+
+      <h3>How we tested it</h3>
+      <p>We last tested on 12 October 2026. We used automated checks (axe-core 4.10, WCAG 2.2 A and AA rules), checked colour contrast, and worked through every view with a keyboard alone, with reduced motion on, and at phone widths down to 320 pixels. We haven’t yet tested with a full range of screen readers (VoiceOver, NVDA, JAWS) and will add that.</p>
+
+      <h3>Feedback and problems</h3>
+      <p>If anything stops you using the dashboard, or you need the data in another format, tell the league organiser in the league’s Slack channel. We’ll aim to reply within a week, and to fix problems before the next race weekend.</p>
+
+      <p class="tl-a11y-date">This statement was prepared on 12 October 2026. We’ll review it after the final race of the season, or sooner if the site changes significantly.</p>
+    </section>
+
+    <footer class="tl-foot" id="foot">
+      <p>Source: league scores supplied by the organiser. “Drive to Sur-Vibe” raced as “Smoth Oppo” in rounds 1–3 (Australia to Japan) and renamed from Miami; it’s one team, shown as SUR all season.</p>
+      <p><a href="#accessibility" data-view="accessibility">Accessibility statement</a></p>
+    </footer>
+  </div>
+<dialog class="tl-player" id="film" aria-labelledby="film-title" aria-describedby="film-sum">
+  <div class="tl-player-h">
+    <h2 id="film-title">Film</h2>
+    <div class="tl-player-nav">
+      <button type="button" id="film-prev" hidden><span aria-hidden="true">◀</span></button>
+      <button type="button" id="film-next" hidden><span aria-hidden="true">▶</span></button>
+      <button type="button" id="film-copy">Copy link</button>
+      <button type="button" id="film-close">Close</button>
+    </div>
+  </div>
+  <div class="tl-player-stage" id="film-stage"><div class="tl-player-canvas" id="film-canvas" aria-hidden="true"></div></div>
+  <p class="sr" id="film-sum"></p>
+  <div class="tl-player-f">
+    <button type="button" class="tl-player-play" id="film-play" autofocus><span aria-hidden="true" id="film-play-ico">▶</span><span id="film-play-txt">Play</span></button>
+    <button type="button" id="film-replay">Replay</button>
+    <button type="button" id="film-sound" aria-pressed="true"><span aria-hidden="true" id="film-sound-ico">🔊</span><span id="film-sound-txt">Sound</span></button>
+    <div class="tl-player-seek"><label class="sr" for="film-seek">Position in film</label><input type="range" id="film-seek" min="0" max="100" step="0.1" value="0"><span class="tl-player-time" id="film-time" aria-hidden="true">0:00</span></div>
+    <div class="tl-player-chaps" id="film-chaps" role="group" aria-label="Jump to"></div>
+    <p class="tl-player-status" id="film-status" role="status"></p>
+  </div>
+</dialog>
+</div>
+</main>
+<script src="data/scores.js"></script>
+<script src="data/teams.js"></script>
+<script src="data/calendar.js"></script>
+<script src="assets/js/d3.v7.min.js"></script>
+<script src="assets/js/dash.js"></script>
+<script src="assets/js/calc.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/films.js"></script>
+<script src="assets/js/snapshot.js"></script>
+<script src="assets/films/geo.js"></script>
+<script src="assets/films/grid-race.js"></script>
+<script src="assets/films/world-tour.js"></script>
+<script src="assets/films/race-recap.js"></script>
+</body>
+</html>

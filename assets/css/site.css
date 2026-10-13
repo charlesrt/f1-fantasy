@@ -1,0 +1,12 @@
+/* site.css — the standalone website only: fonts, page background, scroll padding.
+   Inside Claude the dashboard host provides these. */
+:root {
+  --font-anthropic-sans: "Titillium Web", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-bad: #FF6B60;
+  --cds-dur-slow: 320ms;
+  --cds-ease-out: cubic-bezier(.2, .8, .2, 1);
+  color-scheme: dark;
+}
+html { background: #050607; }
+body { margin: 0; padding: clamp(0px, 2vw, 24px); background: #050607; color: #F2F4F7; font-family: var(--font-anthropic-sans); -webkit-font-smoothing: antialiased; }
+html { scroll-padding-top: var(--tl-pin, 96px); }
